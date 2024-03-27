@@ -8,22 +8,18 @@ import { PersonnesService } from '../personnes.service';
 import { Personne } from '../Personne';
 
 @Component({
-  selector: 'app-liste-personnes',
+  selector: 'app-details-personne',
   standalone: true,
   imports: [RouterLink, RouterOutlet, NgIf, NgFor],
-  templateUrl: './liste-personnes.component.html'
+  templateUrl: './details-personne.component.html'
 })
-export class ListePersonnesComponent {
+export class DetailsPersonneComponent {
   data: Personne[] = [];
 
   constructor(private personnesService : PersonnesService) { }
 
-  ngOnInit(): void {
-    this.find_all();
-  }
-
-  find_all() {
-    this.personnesService.personnes_get_all().subscribe(data => { this.data = data });
+  find_one(_id :number) {
+    this.personnesService.personnes_get_one(_id).subscribe(data => { this.data = data });
   }
 
 }

@@ -3,12 +3,11 @@
 <button (click)="find_all()">Voir les joueurs</button>
 
 <div *ngIf="data">
-  <h2>Données de l'API</h2>
   <ul>
     <li *ngFor="let personne of data">
       {{ personne.nom }}
       {{ personne.prenom }}
-      {{ personne.sexe }}
+      <button>détails</button>
     </li>
   </ul>
 </div>
