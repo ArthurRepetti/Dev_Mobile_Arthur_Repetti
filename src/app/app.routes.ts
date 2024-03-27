@@ -1,9 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { ListeComponent } from './liste/liste.component';
-import { PersonnesComponent } from './personnes/personnes.component';
+import { ListePersonnesComponent } from './liste-personnes/liste-personnes.component';
 
 export const routes: Routes = [
-  {path: 'liste', component: ListeComponent},
-  {path: 'personnes', component: PersonnesComponent}
+  {path: 'liste-personnes', component: ListePersonnesComponent },
 ];

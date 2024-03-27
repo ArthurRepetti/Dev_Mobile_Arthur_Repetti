@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 import { CommonModule } from '@angular/common';
 import { NgIf, NgFor } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
+
 import { Personne } from '../Personne';
 
 @Component({
-  selector: 'app-personnes',
+  selector: 'app-liste-personnes',
   standalone: true,
   imports: [RouterLink, RouterOutlet, NgIf, NgFor],
-  templateUrl: './personnes_affichage_liste.html',
+  templateUrl: './liste-personnes.component.html'
 })
-export class PersonnesComponent {
+export class ListePersonnesComponent {
   data: Personne[] = [];
 
   constructor(private dataService : DataService) { }
