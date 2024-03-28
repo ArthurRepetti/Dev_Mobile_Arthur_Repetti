@@ -16,7 +16,7 @@ import { Personne } from '../Personne';
 export class DetailsPersonneComponent {
   data: Personne[] = [];
 
-  constructor(private personnesService : PersonnesService) { }
+  constructor(private personnesService :PersonnesService) { }
 
   find_one(_id :number) {
     this.personnesService.personnes_get_one(_id).subscribe(data => { this.data = data });

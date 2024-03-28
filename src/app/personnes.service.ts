@@ -18,4 +18,8 @@ export class PersonnesService {
     personnes_get_one(_id :number): Observable<Personne[]> {
       return this.http.get<Personne[]>('/api/personnes/get_one/' + _id);
     }
+
+    personnes_insert_one(personne :Personne): Observable<Personne> {
+      return this.http.post<Personne>('/api/personnes/post_one', personne);
+    }
 }

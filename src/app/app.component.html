@@ -1,10 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- <a class="navbar-brand" href="#">Mon Site</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/liste-personnes">Consulter les personnes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/details-personne">Consulter détails de personnes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/inscription-personne">Inscription de personnes</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 <div class="container-lg">
-  <a routerLink="/liste-personnes">Consulter les personnes</a>
+
 </div>
 
 <div class="container-lg">
-  <a routerLink="/details-personne">Consulter détails de personnes</a>
+
 </div>
 
 <router-outlet></router-outlet>
+

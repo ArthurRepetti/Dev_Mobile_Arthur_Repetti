@@ -6,4 +6,5 @@ export interface Personne {
   prenom: string;
   pseudo: string;
   sexe: string;
+
 }
