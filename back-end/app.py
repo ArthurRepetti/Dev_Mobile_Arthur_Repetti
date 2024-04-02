@@ -10,11 +10,13 @@ from flask import Flask
 """from flask_cors import CORS"""
 
 from personnes_routes import personnes_bp
+from tournois_routes import tournois_bp
 
 app = Flask(__name__)
 """app = CORS(app)"""
 
 app.register_blueprint(personnes_bp, url_prefix='/api/personnes')
+app.register_blueprint(tournois_bp, url_prefix='/api/tournois')
 
 @app.route('/')
 def hello_world():
