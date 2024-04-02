@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
+import {Tournois} from './Tournois';
 
 @Injectable({
   providedIn: 'root'
@@ -9,5 +10,13 @@ import { Observable, throwError } from 'rxjs';
 export class TournoisService {
 
   constructor( private http: httpClient ) {  }
-// test
+
+  tournois_get_all(): Observable<Tournois[]> {
+  return this.http.get<Tournois[]>('/api/tournois/get_all') ;
+  }
+
+  tournois_get_one(_id :number): Observable<Tournois[]> {
+  return this.http.get<Tournois[]>('/api/tournois/get_one/' + _id );
+  }
+
 }
