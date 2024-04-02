@@ -7,7 +7,7 @@
     <li *ngFor="let personne of data">
       {{ personne.nom }}
       {{ personne.prenom }}
-      <button>détails</button>
+      <a routerLink="/details-personne/{{personne._id}}">details</a>
     </li>
   </ul>
 </div>

@@ -1,7 +1,5 @@
 <p>details-personne works!</p>
 
-<button (click)="find_one(1)">Voir le joueur 1</button>
-
 <div *ngIf="data">
   <ul>
     <li *ngFor="let personne of data">
@@ -12,22 +10,3 @@
     </li>
   </ul>
 </div>
-
-<!--
-<div *ngIf="data">
-  <ul *ngFor="let personne of data">
-    <li>
-      {{ personne.pseudo }}
-    </li>
-    <li>
-      {{ personne.prenom }} {{ personne.nom }}
-    </li>
-    <li>
-      {{ personne.date_naissance }}
-    </li>
-    <li>
-      {{ personne.sexe }}
-    </li>
-  </ul>
-</div>
--->

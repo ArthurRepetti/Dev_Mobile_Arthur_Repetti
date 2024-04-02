@@ -1,25 +1,36 @@
-import { Component } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
-import { NgIf, NgFor } from '@angular/common';
-import { RouterOutlet, RouterLink } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PersonnesService } from '../personnes.service';
 import { Personne } from '../Personne';
 
 @Component({
-  selector: 'app-details-personne',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, NgIf, NgFor],
+  imports: [CommonModule],
+  selector: 'app-details-personne',
   templateUrl: './details-personne.component.html'
 })
-export class DetailsPersonneComponent {
+export class DetailsPersonneComponent implements OnInit {
   data: Personne[] = [];
+  id: string = "";
 
-  constructor(private personnesService :PersonnesService) { }
+  constructor(private personnesService: PersonnesService, private route: ActivatedRoute) { }
 
-  find_one(_id :number) {
-    this.personnesService.personnes_get_one(_id).subscribe(data => { this.data = data });
+  find_one() {
+    this.personnesService.personnes_get_one(this.id).subscribe(
+    data => {
+      this.data = data;
+    }, err => {
+      console.log("failed", err);
+    }
+    );
   }
 
+  ngOnInit(): void {
+      this.route.params.subscribe(params => {
+        this.id = params['id'];
+        this.find_one();
+      });
+
+  }
 }

@@ -6,6 +6,6 @@ import { InscriptionPersonneComponent } from './inscription-personne/inscription
 
 export const routes: Routes = [
   {path: 'liste-personnes', component: ListePersonnesComponent },
-  {path: 'details-personne', component: DetailsPersonneComponent },
+  {path: 'details-personne/:id', component: DetailsPersonneComponent },
   {path: 'inscription-personne', component: InscriptionPersonneComponent }
 ];

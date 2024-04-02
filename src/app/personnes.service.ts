@@ -15,7 +15,7 @@ export class PersonnesService {
       return this.http.get<Personne[]>('/api/personnes/get_all');
     }
 
-    personnes_get_one(_id :number): Observable<Personne[]> {
+    personnes_get_one(_id :string): Observable<Personne[]> {
       return this.http.get<Personne[]>('/api/personnes/get_one/' + _id);
     }
 

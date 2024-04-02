@@ -11,7 +11,7 @@ import { Personne } from '../Personne';
 @Component({
   selector: 'app-liste-personnes',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, NgIf, NgFor/*, DetailsPersonneComponent*/],
+  imports: [RouterLink, CommonModule/*, DetailsPersonneComponent*/],
   templateUrl: './liste-personnes.component.html'
 })
 export class ListePersonnesComponent {
@@ -26,9 +26,5 @@ export class ListePersonnesComponent {
   find_all() {
     this.personnesService.personnes_get_all().subscribe(data => { this.data = data });
   }
-
-  /*find_one(_id :number) {
-    this.detailsPersonneComponent.find_one(_id);
-  }*/
 
 }
