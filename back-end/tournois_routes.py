@@ -23,14 +23,14 @@ def tournois_get_one(_id):
 
 @tournois_bp.route('/post_one', methods=['POST'])
 def tournois_post_one():
-    identifiant = request.form.get("identifiant")
+    identifiant = Tournois.find_last_id()
     intitule = request.form.get("intitule")
     lieu = request.form.get("lieu")
     date = request.form.get("date")
     horaires = request.form.get("horaires")
     format = request.form.get("format")
     participant = request.form.get("participant")
-    
+
     Tournois().insert_one(identifiant, intitule, lieu, date, horaires, format, participant)
     return Tournois().find_all()
 
@@ -38,12 +38,12 @@ def tournois_post_one():
 def tournois_patch_one_intitule():
     intitule = request.form.get("intitule")
     new_intitule = request.form.get("new_intitule")
-    
+
     Tournois().update_one_intitule(intitule, new_intitule)
     return Tournois().find_all()
 
 @tournois_bp.route('delete_one', methods=['POST'])
 def tournois_delete_one_intitule(self):
     intitule = request.form.get("intitule")
-    
+
 

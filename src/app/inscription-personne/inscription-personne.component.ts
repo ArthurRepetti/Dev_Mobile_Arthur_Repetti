@@ -14,7 +14,7 @@ import { Personne } from '../Personne';
 })
 
 export class InscriptionPersonneComponent {
-  data: Personne = {_id: 5, date_naissance: '', nom: '', prenom: '', pseudo: '', sexe: ''};
+  data: Personne = {_id: 0, date_naissance: '', nom: '', prenom: '', pseudo: '', sexe: ''};
 
   constructor(private personnesService :PersonnesService) { }
 

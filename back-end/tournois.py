@@ -34,6 +34,17 @@ class Tournois:
 
         return jsonify(find)
 
+
+    def find_last_id(self):
+        cursor = self.collection.find({}, { "_id": 1 })
+        max_id = 0
+
+        for identifiants in cursor :
+            if (int(identifiants['_id']) > max_id):
+                max_id = int(identifiants['_id'])
+
+        return max_id + 1
+
     def insert_one( self, identifiant: int, intitule: str, lieu: str, date: str, horaires: list, format: str, participant: list ):
         document_insert = {
 

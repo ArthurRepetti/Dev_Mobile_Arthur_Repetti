@@ -1,6 +1,6 @@
 
-import { Participant } from '../Participant';
-import { Matche } from '../Matche';
+import { Participant } from './Participant';
+import { Matche } from './Matche';
 
 export interface Tournois {
   _id: number; // Identifiant du tournoi (nombre)
