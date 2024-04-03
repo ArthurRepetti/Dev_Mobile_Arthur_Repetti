@@ -9,7 +9,7 @@ import {Tournois} from './Tournois';
 })
 export class TournoisService {
 
-  constructor( private http: httpClient ) {  }
+  constructor( private http: HttpClient ) {  }
 
   tournois_get_all(): Observable<Tournois[]> {
   return this.http.get<Tournois[]>('/api/tournois/get_all') ;
