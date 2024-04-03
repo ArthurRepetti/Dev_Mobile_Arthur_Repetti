@@ -16,7 +16,7 @@ import { Tournois } from '../Tournois';
   //styleUrl: './liste-tournois.component.css'
 })
 export class ListeTournoisComponent {
-  date: Tournois[] = [];
+  data: Tournois[] = [];
 
   constructor( private tournoisService: TournoisService ) {  }
 
