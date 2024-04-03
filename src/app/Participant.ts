@@ -1,6 +1,6 @@
 
 interface Participant {
-  prenom: string;
-  nom: string;
-  // Ajoutez ici d'autres champs attendus pour un participant
+  nom: string; // Le nom du participant (string)
+  prenom: string; // Le prenom du participant (string)
+
 }
