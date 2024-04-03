@@ -6,5 +6,6 @@ export interface Tournois {
   date: string; // Date du tournoi (chaîne de caractères)
   horaires: string[]; // Horaires du tournoi (tableau de chaînes de caractères)
   format: string; // Format du tournoi (chaîne de caractères)
-  participant: { Personne: any }[]; // Liste des participants au tournoi
+  participant: Participant[]; // Liste des participants au tournoi
 }
+

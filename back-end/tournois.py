@@ -13,30 +13,30 @@ from flask import jsonify
 class Tournois:
     def __init__(self):
         self.collection = Connexion().set_collection("tournois")
-        
-    
+
+
     def find_all(self):
         cursor = self.collection.find()
         find = []
-        
+
         for tournoi in cursor:
             find.append(tournoi)
-            
+
         return jsonify(find)
-    
-    
+
+
     def find_one( self, identifiant: int ):
         cursor = self.collection.find( { "_id": identifiant } )
         find = []
-        
+
         for tournoi in cursor:
             find.append(tournoi)
-        
+
         return jsonify(find)
-    
+
     def insert_one( self, identifiant: int, intitule: str, lieu: str, date: str, horaires: list, format: str, participant: list ):
         document_insert = {
-            
+
             "_id": identifiant,
             "intitule": intitule,
             "lieu": lieu,
@@ -44,23 +44,22 @@ class Tournois:
             "horaires": horaires,
             "format": format,
             "participant": participant
-            
-            
+
         }
-        
+
         self.collection.insert_one(document_insert)
 
 
+        #def insert_match (  )
 
     def remove_one_intitule(self, intitule: str):
         myquery = {"intitule": intitule}
-        
+
         self.collection.delete_one(myquery)
-        
+
     def update_one_intitule( self, intitule: str ):
         myquery = {"intitule": intitule}
         new_value = {"$set": {"intitule": intitule} }
-        
+
         self.collection().update_one(myquery, new_value)
-        
-        
+
