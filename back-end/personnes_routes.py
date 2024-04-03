@@ -9,7 +9,7 @@ Created on Mon Mar 18 16:00:43 2024
 from flask import Blueprint, jsonify, request
 from personnes import Personnes
 
-personnes_bp = Blueprint('routes', __name__)        
+personnes_bp = Blueprint('personnes', __name__)        
 
 @personnes_bp.route('/get_all', methods=['GET'])
 def personnes_get_all():
