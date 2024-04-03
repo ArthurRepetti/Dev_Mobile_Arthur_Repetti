@@ -1,5 +1,7 @@
 
+// @ts-ignore
 import { Participant } from '../Participant';
+// @ts-ignore
 import { Matche } from '../Matche';
 
 export interface Tournois {
@@ -10,7 +12,7 @@ export interface Tournois {
   horaires: string[]; // Horaires du tournoi (tableau de chaînes de caractères)
   format: string; // Format du tournoi (chaîne de caractères)
   participant: Participant[]; // Liste des participants au tournoi
-  matches: Matche[];
+  matches: Matche[]; //liste de matchs
 
 }
 

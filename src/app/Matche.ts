@@ -1,4 +1,5 @@
 
+// @ts-ignore
 import { Participant } from '../Participant';
 
 export interface Personne {
