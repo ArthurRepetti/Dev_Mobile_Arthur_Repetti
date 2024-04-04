@@ -22,7 +22,9 @@ export class ImporterTournoisComponent {
     horaires: [],
     format: '',
     participant: [],
-    matches: []
+    matches: [],
+    categorie_age: '',
+    vainqueur:[]
   };
 
   constructor(private tournoisService: TournoisService) { }

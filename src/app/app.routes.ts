@@ -14,10 +14,8 @@ export const routes: Routes = [
   {path: 'liste-personnes', component: ListePersonnesComponent },
   {path: 'details-personne/:id', component: DetailsPersonneComponent },
   {path: 'inscription-personne', component: InscriptionPersonneComponent },
-  //{path: 'importer-tournois', component: ImporterTournoisComponent }
   {path: 'liste-tournois', component: ListeTournoisComponent },
-  {path: 'details-tournois', component: DetailsTournoisComponent }
-  {path: 'liste-tournois', component: ListeTournoisComponent },
+  {path: 'details-tournois', component: DetailsTournoisComponent },
   {path: 'importer-tournois', component: ImporterTournoisComponent },
   {path: 'creer-tournois', component: CreerTournoisComponent }
 ];

@@ -3,7 +3,6 @@ import { Participant } from './Participant';
 import { Matche } from './Matche';
 
 export interface Tournois {
-  niveau: string;
   _id: number; // Identifiant du tournoi (nombre)
   intitule: string; // Intitulé du tournoi (chaîne de caractères)
   lieu: string; // Lieu du tournoi (chaîne de caractères)
