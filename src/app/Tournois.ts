@@ -1,5 +1,5 @@
 
-import { Participant } from './Participant';
+import { Personne } from './Personne';
 import { Matche } from './Matche';
 
 export interface Tournois {
@@ -9,7 +9,7 @@ export interface Tournois {
   date: string; // Date du tournoi (chaîne de caractères)
   horaires: string[]; // Horaires du tournoi (tableau de chaînes de caractères)
   format: string; // Format du tournoi (chaîne de caractères)
-  participant: Participant[]; // Liste des participants au tournoi
+  participants: Personne[]; // Liste des participants au tournoi
   matches: Matche[]; //liste de matchs
   categorie_age: string ;
   vainqueur: string[]

@@ -21,7 +21,7 @@ export class ImporterTournoisComponent {
     date: '',
     horaires: [],
     format: '',
-    participant: [],
+    participants: [],
     matches: [],
     categorie_age: '',
     vainqueur:[]

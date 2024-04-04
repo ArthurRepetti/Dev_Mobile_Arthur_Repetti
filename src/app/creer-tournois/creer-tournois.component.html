@@ -1,46 +1,18 @@
 <p>creer-tournois works!</p>
-<!--
-<form (ngSubmit)="insert_one()" class="container mt-4">
-  <div class="form-group">
-    <label for="intitule">Intitulé du tournoi:</label>
-    <input type="text" id="intitule" [(ngModel)]="data.intitule" name="intitule" required>
-  </div>
-  <div class="form-group">
-    <label for="lieu">Lieu du tournoi:</label>
-    <input type="text" id="lieu" [(ngModel)]="data.lieu" name="lieu" required>
-  </div>
-  <div class="form-group">
-    <label for="date">Date du tournoi:</label>
-    <input type="text" id="date" [(ngModel)]="data.date" name="date" required>
-  </div>
-  <div class="form-group">
-    <label for="Format">Format :</label>
-    <select id="format" [(ngModel)]="data.format" name="format" required>
-      <option value="">Choisir...</option>
-      <option value="Simple">Simple Homme</option>
-      <option value="Simple">Simple Femme</option>
-      <option value="Mixte">Mixte</option>
-    </select>
-  </div>
-  <div>
-    <button type="submit" class="btn btn-primary">Créer</button>
-  </div>
-</form>
--->
 
 <div class="container">
   <h2>Création de tournois</h2>
   <form>
     <div class="form-group">
-      <label for="intitule">Intitulé du tournoi :</label>
+      <label for="intitule">Intitulé</label>
       <input type="text" class="form-control form-control-lg" id="intitule" [(ngModel)]="data.intitule" name="intitule" required>
     </div>
     <div class="form-group">
-      <label for="lieu">Lieu du tournoi:</label>
+      <label for="lieu">Lieu</label>
       <input type="text" class="form-control form-control-lg" id="lieu" [(ngModel)]="data.lieu" name="lieu" required>
     </div>
     <div class="form-group">
-      <label for="date">Date du tournoi:</label>
+      <label for="date">Date</label>
       <input type="text" class="form-control form-control-lg" id="date" [(ngModel)]="data.date" name="date" required>
     </div>
     <div class="form-group">
@@ -52,6 +24,21 @@
         <option value="Mixte">Mixte</option>
       </select>
     </div>
+    <div class="form-group">
+      <label for="Format">Ajout participants :</label>
+      <select class="form-control form-control-lg" id="participants" [(ngModel)]="participant_selectionne" name="format" required>
+        <option *ngFor="let personne of data2" [value]="personne._id">{{ personne.nom }} {{ personne.prenom }}</option>
+      </select>
+      <button type="button" class="btn btn-primary" (click)="add_participant()">Ajouter participant</button>
+    </div>
+
+    <div class="form-group">
+      <h3>Participants</h3>
+      <ul>
+        <li *ngFor="let participant of data.participants">{{ participant.nom }} {{ participant.prenom }}</li>
+      </ul>
+    </div>
+
     <button type="submit" class="btn btn-primary">Envoyer</button>
   </form>
 </div>

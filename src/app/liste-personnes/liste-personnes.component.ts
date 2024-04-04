@@ -11,13 +11,13 @@ import { Personne } from '../Personne';
 @Component({
   selector: 'app-liste-personnes',
   standalone: true,
-  imports: [RouterLink, CommonModule/*, DetailsPersonneComponent*/],
+  imports: [RouterLink, CommonModule],
   templateUrl: './liste-personnes.component.html'
 })
 export class ListePersonnesComponent {
   data: Personne[] = [];
 
-  constructor(private personnesService :PersonnesService/*, private detailsPersonneComponent :DetailsPersonneComponent*/) { }
+  constructor(private personnesService :PersonnesService) { }
 
   ngOnInit(): void {
     this.find_all();
