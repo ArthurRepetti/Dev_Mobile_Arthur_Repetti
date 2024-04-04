@@ -5,6 +5,7 @@ import { Participant } from '../Participant';
 import { Matche } from '../Matche';
 
 export interface Tournois {
+  niveau: string;
   _id: number; // Identifiant du tournoi (nombre)
   intitule: string; // Intitulé du tournoi (chaîne de caractères)
   lieu: string; // Lieu du tournoi (chaîne de caractères)
@@ -13,6 +14,7 @@ export interface Tournois {
   format: string; // Format du tournoi (chaîne de caractères)
   participant: Participant[]; // Liste des participants au tournoi
   matches: Matche[]; //liste de matchs
-
+  categorie_age: string ;
+  vainqueur: string[]
 }
 

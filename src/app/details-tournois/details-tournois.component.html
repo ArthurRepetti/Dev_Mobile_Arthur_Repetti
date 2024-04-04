@@ -1,0 +1,19 @@
+<p>details-tournois works!</p>
+
+<div *ngIf="data">
+  <ul>
+    <li *ngFor="let tournois of data">
+      {{ tournois.intitule }}
+      {{ tournois.lieu }}
+      {{ tournois.date }}
+      {{ tournois.horaires }}
+      {{ tournois.participant }}
+      {{ tournois.format }}
+      {{ tournois.niveau }}
+      {{ tournois.vainqueur }}
+
+    </li>
+  </ul>
+
+</div>
+

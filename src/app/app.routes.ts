@@ -6,11 +6,13 @@ import { InscriptionPersonneComponent } from './inscription-personne/inscription
 import { ListeTournoisComponent } from './liste-tournois/liste-tournois.component';
 // @ts-ignore
 //import { ImporterTournoisComponent } from './importer-tournois/importer-tournois.component';
+import { DetailsTournoisComponent } from "./details-tournois/details-tournois.component";
 
 export const routes: Routes = [
   {path: 'liste-personnes', component: ListePersonnesComponent },
   {path: 'details-personne/:id', component: DetailsPersonneComponent },
   {path: 'inscription-personne', component: InscriptionPersonneComponent },
   //{path: 'importer-tournois', component: ImporterTournoisComponent }
-  {path: 'liste-tournois', component: ListeTournoisComponent }
+  {path: 'liste-tournois', component: ListeTournoisComponent },
+  {path: 'details-tournois', component: DetailsTournoisComponent }
 ];
