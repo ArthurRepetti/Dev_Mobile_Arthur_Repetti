@@ -27,7 +27,7 @@
 
     <li *ngFor="let tournois of data" class="list-group-item d-flex justify-content-between align-items-center mb-2">
       <span>
-        {{ tournois.intitule }} {{ tournois.date }}
+        {{ tournois.intitule }}
          <a class="btn btn-info btn-sm" routerLink="/details-tournois/{{tournois._id}}">Détails</a>
       </span>
     </li>

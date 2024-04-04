@@ -7,11 +7,13 @@ import { DetailsPersonneComponent } from './details-personne/details-personne.co
 import { InscriptionPersonneComponent } from './inscription-personne/inscription-personne.component';
 import { ImporterTournoisComponent } from './importer-tournois/importer-tournois.component';
 import { CreerTournoisComponent } from './creer-tournois/creer-tournois.component';
+import { DetailsTournoisComponent } from "./details-tournois/details-tournois.component";
+import { ListeTournoisComponent } from "./liste-tournois/liste-tournois.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, ListePersonnesComponent, DetailsPersonneComponent, InscriptionPersonneComponent, ImporterTournoisComponent, CreerTournoisComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, ListePersonnesComponent, DetailsPersonneComponent, InscriptionPersonneComponent, ImporterTournoisComponent, CreerTournoisComponent, DetailsTournoisComponent, ListeTournoisComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent {

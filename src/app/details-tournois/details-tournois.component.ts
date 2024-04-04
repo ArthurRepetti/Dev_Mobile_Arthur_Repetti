@@ -3,7 +3,6 @@ import { TournoisService } from "../tournois.service";
 import { Tournois } from "../Tournois";
 import {CommonModule} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
-import {observable} from "rxjs";
 
 
 @Component({
@@ -12,9 +11,9 @@ import {observable} from "rxjs";
   imports: [CommonModule],
   templateUrl: './details-tournois.component.html',
 })
-export class DetailsTournoisComponent {
+export class DetailsTournoisComponent implements OnInit {
   data: Tournois[] = [] ;
-  id: String = "";
+  id: string = "";
 
   constructor( private tournoisService: TournoisService, private route: ActivatedRoute) {  }
 
