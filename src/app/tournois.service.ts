@@ -15,7 +15,7 @@ export class TournoisService {
     return this.http.get<Tournois[]>('/api/tournois/get_all') ;
   }
 
-  tournois_get_one(_id: String): Observable<Tournois[]> {
+  tournois_get_one(_id: string): Observable<Tournois[]> {
     return this.http.get<Tournois[]>('/api/tournois/get_one/' + _id );
   }
 

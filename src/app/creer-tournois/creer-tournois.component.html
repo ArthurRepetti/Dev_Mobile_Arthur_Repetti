@@ -18,19 +18,32 @@
     <div class="form-group">
       <label for="Format">Format :</label>
       <select class="form-control form-control-lg" id="format" [(ngModel)]="data.format" name="format" required>
-        <option value="">Choisir...</option>
         <option value="Simple">Simple Homme</option>
         <option value="Simple">Simple Femme</option>
         <option value="Mixte">Mixte</option>
       </select>
     </div>
-    <div class="form-group">
-      <label for="Format">Ajout participants :</label>
-      <select class="form-control form-control-lg" id="participants" [(ngModel)]="participant_selectionne" name="format" required>
-        <option *ngFor="let personne of data2" [value]="personne._id">{{ personne.nom }} {{ personne.prenom }}</option>
-      </select>
-      <button type="button" class="btn btn-primary" (click)="add_participant()">Ajouter participant</button>
-    </div>
+<!--    <div class="form-group">-->
+<!--      <label for="Format">Ajout participants :</label>-->
+<!--      <select class="form-control form-control-lg" id="participants" [(ngModel)]="participant_selectionne" name="participants">-->
+<!--        <option *ngFor="let personne of data2" [value]="personne">{{ personne.nom }} {{ personne.prenom }}</option>-->
+<!--      </select>-->
+<!--      <button type="button" class="btn btn-primary" (click)="add_participant()">Ajouter participant</button>-->
+<!--    </div>-->
+
+    <form (ngSubmit)="add_participant()">
+      <!-- Vos champs de formulaire -->
+
+      <div class="form-group">
+        <label for="Format">Ajout participants :</label>
+        <select class="form-control form-control-lg" id="participants" [(ngModel)]="participant_selectionne" name="participants">
+          <option *ngFor="let personne of data2" [ngValue]="personne">{{ personne.nom }} {{ personne.prenom }}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Ajouter participant</button>
+    </form>
+
 
     <div class="form-group">
       <h3>Participants</h3>

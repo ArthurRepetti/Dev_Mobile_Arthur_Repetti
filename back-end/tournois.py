@@ -45,7 +45,8 @@ class Tournois:
 
         return max_id + 1
 
-    def insert_one(self, identifiant: int, intitule: str, lieu: str, date: str, horaires: list, format: str):
+    def insert_one(self, identifiant: int, intitule: str, lieu: str, date: str, horaires: list, format: str, participants: list):
+        print("j'essaye d'inserer")
         my_insert = {
             "_id": identifiant,
             "intitule": intitule,
@@ -53,12 +54,13 @@ class Tournois:
             "date": date,
             "horaires": horaires,
             "format": format,
-            "participant": "",
+            "participant": participants,
             "matches": ""
 
         }
 
         self.collection.insert_one(my_insert)
+        
     """
     def insert_one(self, identifiant: int, intitule: str, lieu: str, date: str, horaires: list, format: str, participant: list):
       document_insert = {
