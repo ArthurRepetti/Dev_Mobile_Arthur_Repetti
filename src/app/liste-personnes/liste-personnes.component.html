@@ -1,13 +1,18 @@
 <p>liste-personnes works!</p>
 
-<button (click)="find_all()">Voir les joueurs</button>
+<button class="btn btn-primary mb-3" (click)="find_all()">Rafraîchir</button>
 
 <div *ngIf="data">
+
   <ul>
-    <li *ngFor="let personne of data">
-      {{ personne.nom }}
-      {{ personne.prenom }}
-      <a routerLink="/details-personne/{{personne._id}}">details</a>
+
+    <li *ngFor="let personne of data" class="list-group-item d-flex justify-content-between align-items-center mb-2">
+      <span>
+        {{ personne.nom }} {{ personne.prenom }}
+         <a class="btn btn-info btn-sm" routerLink="/details-personne/{{personne._id}}">Détails</a>
+      </span>
     </li>
+
   </ul>
+
 </div>

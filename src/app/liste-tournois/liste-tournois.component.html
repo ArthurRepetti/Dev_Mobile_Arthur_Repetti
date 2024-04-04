@@ -1,17 +1,34 @@
 <p>liste-tournois works!</p>
-
-<button (click)="find_all()"> Voir les Tournois </button>
+<!--
+<button class="btn btn-primary mb-3" (click)="find_all()">Rafraîchir</button>
 
 <div *ngIf="data">
 
   <ul>
 
-    <li *ngFor="let tournois of data">
+    <li *ngFor="let tournois of data" class="list-group-item d-flex justify-content-between align-items-center">
       {{ tournois.intitule }}
-      <a routerLink="/details-tournois/{{tournois._id}}"> Détails </a>
+      <a routerLink="/details-tournois/{{tournois._id}}">détails</a>
     </li>
 
   </ul>
 
 </div>
 
+<button class="btn btn-primary mb-3" (click)="find_all()">Rafraîchir</button>
+
+<div *ngIf="data">
+-->
+<div *ngIf="data">
+  <ul>
+
+    <li *ngFor="let tournois of data" class="list-group-item d-flex justify-content-between align-items-center mb-2">
+      <span>
+        {{ tournois.intitule }} {{ tournois.date }}
+         <a class="btn btn-info btn-sm" routerLink="/details-tournois/{{tournois._id}}">Détails</a>
+      </span>
+    </li>
+
+  </ul>
+
+</div>

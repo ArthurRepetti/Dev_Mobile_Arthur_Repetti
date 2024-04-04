@@ -1,5 +1,5 @@
 <p>details-personne works!</p>
-
+<!--
 <div *ngIf="data">
   <ul>
     <li *ngFor="let personne of data">
@@ -9,4 +9,38 @@
       {{ personne.date_naissance }}
     </li>
   </ul>
+</div>
+
+-->
+
+<div *ngIf="data">
+  <li *ngFor="let personne of data">
+  <div class="card">
+    <div class="card-header">
+      Détails de la personne
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <strong>Nom :</strong>
+          <span>{{ personne.nom }}</span>
+        </div>
+        <div class="col-sm-6">
+          <strong>Date de naissance :</strong>
+          <span>{{ personne.date_naissance }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <strong>Prénom :</strong>
+          <span>{{ personne.prenom }}</span>
+        </div>
+        <div class="col-sm-6">
+          <strong>Sexe :</strong>
+          <span>{{ personne.sexe }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </li>
 </div>
