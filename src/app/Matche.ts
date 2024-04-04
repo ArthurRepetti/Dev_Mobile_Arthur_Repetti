@@ -1,11 +1,11 @@
 
-import { Participant } from './Participant';
+import { Personne } from './Personne';
 
 export interface Matche {
-  joueur1: Participant;
-  joueur2: Participant;
+  joueur1: Personne;
+  joueur2: Personne;
   score1: number;
   score2: number;
-  vainqueur: Participant;
+  vainqueur: Personne;
 
 }
