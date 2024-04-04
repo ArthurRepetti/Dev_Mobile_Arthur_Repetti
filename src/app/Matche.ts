@@ -1,8 +1,7 @@
 
-// @ts-ignore
-import { Participant } from '../Participant';
+import { Participant } from './Participant';
 
-export interface Personne {
+export interface Matche {
   joueur1: Participant;
   joueur2: Participant;
   score1: number;

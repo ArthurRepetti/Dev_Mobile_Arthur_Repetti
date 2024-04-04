@@ -1,8 +1,6 @@
 
-// @ts-ignore
-import { Participant } from '../Participant';
-// @ts-ignore
-import { Matche } from '../Matche';
+import { Participant } from './Participant';
+import { Matche } from './Matche';
 
 export interface Tournois {
   niveau: string;
