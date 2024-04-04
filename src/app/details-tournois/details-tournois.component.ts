@@ -11,7 +11,6 @@ import {observable} from "rxjs";
   standalone: true,
   imports: [CommonModule],
   templateUrl: './details-tournois.component.html',
-  styleUrl: './details-tournois.component.css'
 })
 export class DetailsTournoisComponent {
   data: Tournois[] = [] ;

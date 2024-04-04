@@ -6,14 +6,13 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 
 import { TournoisService } from '../tournois.service';
 import { Tournois } from '../Tournois';
-//import { DetailsPersonneComponent } from './details-personne/details-personne.component'
+//import { DetailsPersonneComponent } from './details-tournois/details-tournois.component'
 
 @Component({
   selector: 'app-liste-tournois',
   standalone: true,
-  imports: [RouterLink, NgIf, NgFor],
+  imports: [RouterLink, NgIf, NgFor, CommonModule],
   templateUrl: './liste-tournois.component.html' //,
-  //styleUrl: './liste-tournois.component.css'
 })
 export class ListeTournoisComponent {
   data: Tournois[] = [];
