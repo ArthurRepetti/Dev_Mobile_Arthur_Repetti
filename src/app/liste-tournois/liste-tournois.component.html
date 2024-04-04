@@ -7,7 +7,6 @@
   <ul>
 
     <li *ngFor="let tournois of data">
-      {{ tournois._id }}
       {{ tournois.intitule }}
       <a routerLink="/details-tournois/{{tournois._id}}"> Détails </a>
     </li>
