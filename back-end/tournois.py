@@ -83,6 +83,13 @@ class Tournois:
 
         self.collection.insert_one(document_insert)
     """
+    
+    def find_matches(self, _id: int):
+        cursor = self.collection.find_one({"_id": 1})
+        find = cursor["matches"]
+        
+        return find
+    
     def inserer_match(self, id_tournoi, nom_joueur1, score_joueur1, nom_joueur2, score_joueur2):
       match = {
         "joueur1": {"nom": nom_joueur1, "score": score_joueur1},

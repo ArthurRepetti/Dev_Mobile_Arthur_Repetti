@@ -52,15 +52,13 @@ def tournois_post_one():
 
     return Tournois().find_all()
 
-@tournois_bp.route('/patch_one', methods=['POST'])
-def tournois_patch_one_intitule():
-    intitule = request.form.get("intitule")
-    new_intitule = request.form.get("new_intitule")
+@tournois_bp.route('/get_matches/<int:_id>', methods=['GET'])
+def tournois_get_matches(_id):
+    return Tournois().find_matches(_id)
 
-    Tournois().update_one_intitule(intitule, new_intitule)
-    return Tournois().find_all()
 
 """
+@tournois_bp.route('/patch_one', methods=['POST'])
 @tournois_bp.route('delete_one', methods=['POST'])
 def tournois_delete_one_intitule(self):
     intitule = request.form.get("intitule")

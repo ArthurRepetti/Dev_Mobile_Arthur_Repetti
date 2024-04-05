@@ -12,7 +12,7 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './details-tournois.component.html',
 })
 export class DetailsTournoisComponent implements OnInit {
-  data: Tournois[] = [] ;
+  data: Tournois[] = [];
   id: string = "";
 
   constructor( private tournoisService: TournoisService, private route: ActivatedRoute) {  }
@@ -25,7 +25,9 @@ export class DetailsTournoisComponent implements OnInit {
         console.log("failed", err);
       }
     );
+
   }
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params['id'];
