@@ -9,6 +9,7 @@ Created on Thu Mar 28 15:43:14 2024
 from Connexion import Connexion
 
 from flask import jsonify
+from personnes import Personnes
 
 class Tournois:
     def __init__(self):
@@ -60,7 +61,7 @@ class Tournois:
         }
 
         self.collection.insert_one(my_insert)
-        
+
     """
     def insert_one(self, identifiant: int, intitule: str, lieu: str, date: str, horaires: list, format: str, participant: list):
       document_insert = {
@@ -110,3 +111,15 @@ class Tournois:
 
         self.collection().update_one(myquery, new_value)
 
+    def get_participant_tournoi(self, id_tournoi):
+      tournoi = self.collection.find_one({ "_id": id_tournoi })
+      if not tournoi:
+        return "Tournoi non trouvé"
+
+      participants_id = tournoi.get("participants", [])
+
+      participants = list(Personnes.find( { "_id": { "$in": participants_id}}) )
+
+      participants_liste = [ { "nom": p["nom"], "prenom": p["prenom"]} for p in participants ]
+
+      return participants_liste
