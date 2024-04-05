@@ -56,7 +56,7 @@ class Tournois:
             "horaires": horaires,
             "format": format,
             "participant": participants,
-            "matches": ""
+            "matches": self.create_matches(participants)
 
         }
 
@@ -99,6 +99,16 @@ class Tournois:
         return jsonify({"succes": False, "erreur": str(e)}), 500
 
         #def insert_match (  )
+        
+    def create_matches(self, participants: list):
+        matches = []
+        
+        for i, participant1 in enumerate(participants):
+            for j, participant2 in enumerate(participants):
+                if i != j:
+                    matches.append({"joueur1": participant1, "joueur2": participant2, "score1": None, "score2": None, "vainqueur": None})
+            
+            return matches
 
     def remove_one_intitule(self, intitule: str):
         myquery = {"intitule": intitule}

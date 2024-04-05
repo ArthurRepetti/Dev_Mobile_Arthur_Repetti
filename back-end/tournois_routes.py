@@ -46,12 +46,11 @@ def tournois_post_one():
     date = tournois['date']
     horaires = [] # tournois['horaires']
     format = tournois['format']
-    # participants = tournois['paticipant']
     participants = tournois.get('participants', [])
     
     Tournois().insert_one(identifiant, intitule, lieu, date, horaires, format, participants)
 
-    return "cela fonctionne"
+    return Tournois().find_all()
 
 @tournois_bp.route('/patch_one', methods=['POST'])
 def tournois_patch_one_intitule():
