@@ -61,15 +61,16 @@ class Tournois:
         }
 
         self.collection.insert_one(my_insert)
-        
+
+    
     def create_matches(self, participants: list):
         matches = []
-        
-        for i, participant1 in enumerate(participants):
-            for j, participant2 in enumerate(participants):
-                if i != j:
-                    matches.append({"joueur1": participant1, "joueur2": participant2, "score1": None, "score2": None, "vainqueur": None})
-            
+    
+        for i in range(len(participants) - 1):
+            for j in range(i + 1, len(participants)):
+                match = {"joueur1": participants[i], "joueur2": participants[j], "score1": None, "score2": None, "vainqueur": None}
+                matches.append(match)
+    
         return matches
 
     def remove_one_intitule(self, intitule: str):
