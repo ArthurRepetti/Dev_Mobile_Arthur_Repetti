@@ -2,7 +2,7 @@
 
 <div class="container">
   <h2>Création de tournois</h2>
-  <form>
+  <form (ngSubmit)="insert_one()">
     <div class="form-group">
       <label for="intitule">Intitulé</label>
       <input type="text" class="form-control form-control-lg" id="intitule" [(ngModel)]="data.intitule" name="intitule" required>
@@ -52,6 +52,6 @@
       </ul>
     </div>
 
-    <button type="submit" class="btn btn-primary">Envoyer</button>
+    <button type="submit" class="btn btn-primary">Créer</button>
   </form>
 </div>
