@@ -11,15 +11,17 @@ from personnes import Personnes
 
 personnes_bp = Blueprint('routes', __name__)
 
-@personnes_bp.route('/get_all', methods=['GET'])
+@personnes_bp.route('/', methods=['GET'])
 def personnes_get_all():
     return Personnes().find_all()
 
-@personnes_bp.route('/get_one/<int:_id>', methods=['GET'])
+
+@personnes_bp.route('/<int:_id>', methods=['GET'])
 def personnes_get_one(_id):
     return Personnes().find_one(_id)
 
-@personnes_bp.route('/post_one', methods=['POST'])
+
+@personnes_bp.route('/', methods=['POST'])
 def personnes_post_one():
     personne = request.get_json()
 
@@ -32,7 +34,7 @@ def personnes_post_one():
 
     Personnes().insert_one(identifiant, prenom, nom, date_naissance, sexe, pseudo)
     return Personnes().find_all()
-
+"""
 @personnes_bp.route('/patch_one', methods=['POST'])
 def personne_patch_one_prenom():
     prenom = request.form.get("prenom")
@@ -47,3 +49,4 @@ def personnes_delet_one_prenom(self):
 
     Personnes().remove_one_prenom(prenom)
     return Personnes().find_all()
+"""

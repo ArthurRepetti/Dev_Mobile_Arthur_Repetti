@@ -12,15 +12,15 @@ export class TournoisService {
   constructor( private http: HttpClient ) {  }
 
   tournois_get_all(): Observable<Tournois[]> {
-    return this.http.get<Tournois[]>('/api/tournois/get_all') ;
+    return this.http.get<Tournois[]>('/api/tournois/') ;
   }
 
   tournois_get_one(_id: string): Observable<Tournois[]> {
-    return this.http.get<Tournois[]>('/api/tournois/get_one/' + _id );
+    return this.http.get<Tournois[]>('/api/tournois/' + _id );
   }
 
   tournois_insert_one(tournois :Tournois): Observable<Tournois> {
-    return this.http.post<Tournois>('/api/tournois/post_one', tournois);
+    return this.http.post<Tournois>('/api/tournois/', tournois);
   }
 
 }
